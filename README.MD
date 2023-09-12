@@ -26,6 +26,6 @@ dengan perintah python manage.py runserver pada terminal, saya dapat melihat tam
 9. Terakhir, saya melakukan deploy di Adaptable dengan memilih Python App Template dan PostgreSQL yang akan digunakan.
 
 Bagan
-
+![Frame 1](https://github.com/kayzaazr/cupcat-shop/assets/125040193/d2f5af7c-c908-438b-8efb-e42c3921e056)
 Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
