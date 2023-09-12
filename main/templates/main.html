@@ -1,8 +1,77 @@
-<h1>Shopping List Page</h1>
+<head>
+  <title>Welcome to Cupcat-Shop</title>
+  <style>
+    .welcome{
+      background-color: #FFC0C0;
+      font-size: 25px;
+      font-weight: bold;
+      font-family: 'Font Name', sans-serif;
+      padding: 20px;
+      display: flex;
+      justify-content:center;
 
-...
-<h5>Name: </h5>
-<p>{{ name }}<p>
-<h5>Class: </h5>
-<p>{{ class }}<p>
-...
+    }
+    .cupcake-list {
+      background-color: #E09D4D;
+      display:flex;
+      flex-wrap: wrap;
+      border-radius: 10px;
+      justify-content:center;
+    }
+    .cupcake-box {
+      background-color: #FFFF;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: 'Font Name', sans-serif;
+      padding: 10px;
+      margin: 10px;
+      width: 45%;
+    }
+
+    h5, h4, h3, h2 {
+      font-size: 16px; /* Ubah ukuran teks sesuai dengan kebutuhan Anda */
+    }
+    /* Gaya untuk kotak cupcake urutan pertama */
+  .cupcake-box:nth-child(1) h5{
+    background-color: #FF5733; /* Warna latar belakang untuk tulisan "Cupcake" pada box pertama */
+    color: #FFFFFF; /* Warna teks pada tulisan "Cupcake" pada box pertama */
+  }
+
+  .cupcake-box:nth-child(2) h5{
+    background-color: #FF5733; /* Warna latar belakang untuk tulisan "Cupcake" pada box pertama */
+    color: #FFFFFF; /* Warna teks pada tulisan "Cupcake" pada box pertama */
+  }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div class='welcome'>
+      /ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗ SELAMAT DATANG DI CUPCAT-SHOP /ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗
+      
+    </div>
+    <div class="cupcake-list">
+      {% for i in cupcakes %}
+      <div class="cupcake-box">
+          <h5>Cupcake:</h5>
+          <p>{{ i.cupcake }}</p>
+
+          <h4>Price:</h4>
+          <p>{{ i.price }}</p>
+
+          <h3>Description:</h3>
+          <p>{{ i.description }}</p>
+
+          <h2>Sweetness:</h2>
+          <p>{{ i.sweetness }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    
+</div>
+
+</body>
