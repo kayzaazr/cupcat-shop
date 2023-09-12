@@ -2,8 +2,6 @@ Link Deploying App : https://cupcat-shop.adaptable.app/
 
 Saya membuat jenis inventori berupa toko kue cupcake yang memiliki beberapa atribut, yaitu name, price, amount, description, dan sweetness.
 
-Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
-
 # Step-by-step
 Step-by-step saya mengerjakan tugas 2 ini dimulai dari
 1. Membuat repository baru di github dan folder baru di direktori lokal dengan nama aplikasi saya, yaitu cupcat-shop.
