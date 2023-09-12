@@ -1,12 +1,17 @@
 <head>
   <title>Welcome to Cupcat-Shop</title>
   <style>
+    .container {
+      background-color: red;
+      display: flex;
+      flex-direction: column;
+    }
     .welcome{
       background-color: #FFC0C0;
       font-size: 25px;
       font-weight: bold;
       font-family: 'Font Name', sans-serif;
-      padding: 20px;
+      padding: 5px;
       display: flex;
       justify-content:center;
 
@@ -27,13 +32,14 @@
       font-size: 20px;
       font-weight: bold;
       font-family: 'Font Name', sans-serif;
-      padding: 10px;
+      padding: 5px;
       margin: 10px;
-      width: 45%;
+      width: 40%;
     }
 
-    h5, h4, h3, h2 {
-      font-size: 16px; /* Ubah ukuran teks sesuai dengan kebutuhan Anda */
+    h5, h4, h3, h2, h1 {
+      font-size: 30px; /* Ubah ukuran teks sesuai dengan kebutuhan Anda */
+      padding: 2px;
     }
     /* Gaya untuk kotak cupcake urutan pertama */
   .cupcake-box:nth-child(1) h5{
@@ -49,7 +55,7 @@
 </head>
 
 <body>
-  <div>
+  <div class='container'>
     <div class='welcome'>
       /ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗ SELAMAT DATANG DI CUPCAT-SHOP /ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗
       
@@ -58,16 +64,15 @@
       {% for i in cupcakes %}
       <div class="cupcake-box">
           <h5>Cupcake:</h5>
-          <p>{{ i.cupcake }}</p>
-
+          <p>{{ i.name }}</p>
           <h4>Price:</h4>
           <p>{{ i.price }}</p>
-
           <h3>Description:</h3>
           <p>{{ i.description }}</p>
-
           <h2>Sweetness:</h2>
           <p>{{ i.sweetness }}</p>
+          <h1>Stock</h1>
+          <p>{{ i.amount }}</p>
       </div>
       {% endfor %}
     </div>
