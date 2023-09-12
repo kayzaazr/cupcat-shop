@@ -37,9 +37,7 @@ Virtual Environment digunakan untuk mengisolasi paket dan dependensi yang berbed
 
 # Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
 1. MVC (Model-View-Controller) memiliki fokus pada pengendali (Controller) untuk mengatur interaksi antara Model (data dan logika) dan View (tampilan) dalam aplikasi. Controller bertanggung jawab untuk menerima input dari pengguna, memprosesnya, dan mengubah Model atau View sesuai dengan permintaan user.
-
 2. MVT (Model-View-Template) memiliki fokus pada penggunaan Template (pola tampilan) dalam kerangka kerja Django. Dalam MVT, Template adalah komponen yang digunakan untuk mengatur tampilan HTML dari suatu aplikasi web. Template memungkinkan pemisahan yang jelas antara tampilan dan data.
-
-3.MVVM (Model-View-ViewModel) adalah pola desain yang memiliki fokus pada ViewModel. ViewModel adalah komponen yang bertindak sebagai penghubung antara Model (data) dan View (tampilan) dalam pengembangan aplikasi berbasis antarmuka pengguna (UI). ViewModel bertanggung jawab untuk menyediakan data dan metode yang diperlukan oleh tampilan sehingga memungkinkan binding dua arah antara tampilan dan data.
+3. MVVM (Model-View-ViewModel) adalah pola desain yang memiliki fokus pada ViewModel. ViewModel adalah komponen yang bertindak sebagai penghubung antara Model (data) dan View (tampilan) dalam pengembangan aplikasi berbasis antarmuka pengguna (UI). ViewModel bertanggung jawab untuk menyediakan data dan metode yang diperlukan oleh tampilan sehingga memungkinkan binding dua arah antara tampilan dan data.
 
 Perbedaan utama di antara ketiganya terletak pada cara penggunaannya dan rincian implementasi yang spesifik. Namun, inti tujuan dari ketiga pola desain ini adalah untuk mencapai pemisahan yang jelas antara tampilan dan data dalam pengembangan aplikasi. Hal ini dilakukan untuk meningkatkan pemahaman kode dan kemampuan perluasan (scalability). Dengan kata lain, meskipun metode dan konsepnya berbeda, tetapi akhirnya semua tiga pola ini bertujuan untuk mencapai struktur kode yang efektif, lebih terstruktur, dan mudah dikelola.
