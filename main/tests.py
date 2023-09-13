@@ -24,4 +24,4 @@ class mainTest(TestCase):
         # Memeriksa apakah nilai atribut sesuai
         self.assertEqual(item.name, 'Contoh Item')
         self.assertEqual(item.amount, 26)
-        self.assertEqual(item.description, 'Deskripsi item cobaa')
+        self.assertEqual(item.description, 'Deskripsi item')
