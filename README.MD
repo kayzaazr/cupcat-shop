@@ -49,47 +49,43 @@ class ProductForm(ModelForm):
 
 2. Pada views.py, tambahkan fungsi create_product
 
-'''
-def create_product(request):
-    form = ProductForm(request.POST or None)
-
-    if form.is_valid() and request.method == "POST":
-        form.save()
-        return HttpResponseRedirect(reverse('main:show_main'))
-
+    
+    def create_product(request):
+        form = ProductForm(request.POST or None)
+    
+        if form.is_valid() and request.method == "POST":
+            form.save()
+            return HttpResponseRedirect(reverse('main:show_main'))
+    
     context = {'form': form}
     return render(request, "create_product.html", context)
-'''
+
 
 3. Pada direktori main/templates menambahkan template baru bernama create_product.html dengan kode berikut
 
-'''
-{% extends 'base.html' %}
-
-{% block content %}
-...
-<body>
-    <div class="container1">
-        <h1>Add New Product</h1>
-
-        <div class="container">
-            <form method="POST" class="form-table">
-                {% csrf_token %}
-                <table>
-                    {{ form.as_table }}
-                    <tr>
-                        <td></td>
-                        <td>
-                            <input type="submit" value="Add Product"/>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-        </div>
-</div>
-</body>
-{% endblock content %}
-'''
+    {% extends 'base.html' %}
+    {% block content %}
+    <body>
+        <div class="container1">
+            <h1>Add New Product</h1>
+    
+            <div class="container">
+                <form method="POST" class="form-table">
+                    {% csrf_token %}
+                    <table>
+                        {{ form.as_table }}
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="submit" value="Add Product"/>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+    </div>
+    </body>
+    {% endblock content %}
 
 4. Lalu untuk XML dan JSON, pada views.py di folder main, tambahkan import HttpResponse dan serializer. Selain itu tambahkan juga fungsi show_xml dan show_json yang pada masing-masing data memiliki variable data = Product.objects.all(). Pada masing-masing fungsi meng-return HttpResponse yang sudah di-serialize sesuai format masing-masing yaitu XML dan JSON
 
@@ -97,22 +93,20 @@ def create_product(request):
 
 6. Terakhir, pada file urls.py tambahkan urlpatterns sesuai dengan format yang telah ditambahkan di atas.
 
-'''
-from django.urls import path
-from main.views import show_main
-from main.views import show_main, create_product, show_xml, show_json, show_xml_by_id, show_json_by_id
-
-app_name = 'main'
-
-urlpatterns = [
-    path('', show_main, name='show_main'),
-    path('create-product', create_product, name='create_product'),
-    path('xml/', show_xml, name='show_xml'),
-    path('json/', show_json, name='show_json'),
-    path('xml/<int:id>/', show_xml_by_id, name='show_xml_by_id'),
-    path('json/<int:id>/', show_json_by_id, name='show_json_by_id'),
-]
-'''
+    from django.urls import path
+    from main.views import show_main
+    from main.views import show_main, create_product, show_xml, show_json, show_xml_by_id, show_json_by_id
+    
+    app_name = 'main'
+    
+    urlpatterns = [
+        path('', show_main, name='show_main'),
+        path('create-product', create_product, name='create_product'),
+        path('xml/', show_xml, name='show_xml'),
+        path('json/', show_json, name='show_json'),
+        path('xml/<int:id>/', show_xml_by_id, name='show_xml_by_id'),
+        path('json/<int:id>/', show_json_by_id, name='show_json_by_id'),
+    ]
 
 ### Screenshot Postman
 ##### HTML
