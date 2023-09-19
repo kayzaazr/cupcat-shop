@@ -36,8 +36,7 @@ JSON menggunakan format yang sederhana dan mirip dengan struktur data dalam baha
 
 ### STEP
 1. Pertama, membuat file baru forms.py pada direktori main. FIle forms.py ini diisi dengan kode
-
-'''
+```
 from django.forms import ModelForm
 from main.models import Product
 
@@ -45,11 +44,10 @@ class ProductForm(ModelForm):
     class Meta:
         model = Product
         fields = ["name", "price", "description","sweetness","amount"]
-'''
+```
 
 2. Pada views.py, tambahkan fungsi create_product
-
-    
+```
     def create_product(request):
         form = ProductForm(request.POST or None)
     
@@ -59,10 +57,10 @@ class ProductForm(ModelForm):
     
     context = {'form': form}
     return render(request, "create_product.html", context)
-
+```
 
 3. Pada direktori main/templates menambahkan template baru bernama create_product.html dengan kode berikut
-
+```
     {% extends 'base.html' %}
     {% block content %}
     <body>
@@ -86,13 +84,14 @@ class ProductForm(ModelForm):
     </div>
     </body>
     {% endblock content %}
+```
 
 4. Lalu untuk XML dan JSON, pada views.py di folder main, tambahkan import HttpResponse dan serializer. Selain itu tambahkan juga fungsi show_xml dan show_json yang pada masing-masing data memiliki variable data = Product.objects.all(). Pada masing-masing fungsi meng-return HttpResponse yang sudah di-serialize sesuai format masing-masing yaitu XML dan JSON
 
 5. Step sebelumnya diaplikasikan untuk format XML dan JSON by ID. Parameternya ditambahkan variable id. Setiap fungsinya terdapat data = Product.objects.filter(pk=id), lalu return HttpResponse yang sudah di-serialize sesuai format masing-masing yaitu XML dan JSON.
 
 6. Terakhir, pada file urls.py tambahkan urlpatterns sesuai dengan format yang telah ditambahkan di atas.
-
+```
     from django.urls import path
     from main.views import show_main
     from main.views import show_main, create_product, show_xml, show_json, show_xml_by_id, show_json_by_id
@@ -107,6 +106,7 @@ class ProductForm(ModelForm):
         path('xml/<int:id>/', show_xml_by_id, name='show_xml_by_id'),
         path('json/<int:id>/', show_json_by_id, name='show_json_by_id'),
     ]
+```
 
 ### Screenshot Postman
 ##### HTML
