@@ -1,19 +1,95 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block content %}
-<h1>Add New Product</h1>
+<head>
+    <style>
+        .container1{
+            background-color: white;
+            background: linear-gradient(to bottom, #EDEDFF, #FFAEAE);
+            display: flex;
+            flex-direction: column;
+            padding:20px;
+            gap:50px;
+            align-items: center;
+            width: 1480px;
+            height: 770px; 
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(to bottom, #FFAE98, #FFD9AD);
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-table {
+            width: 100%;
+        }
+        .form-table th {
+            text-align: left;
+            padding: 10px;
+        }
+        .form-table td {
+            padding: 10px;
+        }
+        .form-table input[type="text"],
+        .form-table input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            background-color: #ffeae4;
+            border: 1px solid pink;
+            border-radius: 20px;
+        }
+        .form-table input[type="submit"] {
+            background-color: #FFAE98;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .form-table input[type="submit"]:hover {
+            background-color: #BC5151;
+        }
 
-<form method="POST">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-        <tr>
-            <td></td>
-            <td>
-                <input type="submit" value="Add Product"/>
-            </td>
-        </tr>
-    </table>
-</form>
+        .judul{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-{% endblock %}
+        h1{
+            background-color: #FFC0C0;
+            font-size: 25px;
+            font-weight: bold;
+            font-family: 'Font Name', sans-serif;
+            padding: 5px;
+            display: flex;
+            justify-content:center;
+            width: 800px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <h1>Add New Product</h1>
+
+        <div class="container">
+            <form method="POST" class="form-table">
+                {% csrf_token %}
+                <table>
+                    {{ form.as_table }}
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Add Product"/>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+</div>
+</body>
+{% endblock content %}

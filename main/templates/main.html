@@ -6,11 +6,14 @@
   <style>
     .container {
       background-color: white;
+      background: linear-gradient(to bottom, #EDEDFF, #FFAEAE);
       display: flex;
       flex-direction: column;
       padding:20px;
       gap:50px;
       align-items: center;
+      width: 1480px;
+      height: 770px;
     }
     .welcome{
       background-color: #FFC0C0;
@@ -22,147 +25,63 @@
       justify-content:center;
       width: 800px;
       border-radius: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 
     }
-    .cupcake-list {
-      background-color: white;
-      display:flex;
-      flex-wrap: wrap;
-      border-radius: 10px;
-      justify-content:center;
-      padding:10px
-    }
-    .cupcake-box:nth-child(1) {
-      background-color: #D68787;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border-radius: 20px;
-      font-size: 20px;
-      font-weight: bold;
-      font-family: 'Font Name', sans-serif;
-      padding: 5px;
-      margin: 10px;
-      width: 30%;
+
+    
+    
+    th, td {
+        border: 1px solid #ddd;
+        padding: 20px;
+        text-align: left;
     }
     
-    .cupcake-box:nth-child(1) h5 {
+    tr:nth-child(odd) {
+      background-color: white;
+  }
+    th {
+        padding: 8px;
+        background-color: #FFC0C0;
+        font-weight: bold;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+    button{
+      background-color:#E49C9C ;
+      width: 200px;
+      height: 100px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover{
       background-color: #BC5151;
     }
 
-    .cupcake-box:nth-child(2) {
-      background-color: #D3A280;
+    .buttondir{
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      border-radius: 20px;
-      font-size: 20px;
-      font-weight: bold;
-      font-family: 'Font Name', sans-serif;
-      padding: 5px;
-      margin: 10px;
-      width: 30%;
+      gap: 20px;
     }
-
-    .cupcake-box:nth-child(3) {
-      background-color: #FFFDCB;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border-radius: 20px;
-      font-size: 20px;
-      font-weight: bold;
-      font-family: 'Font Name', sans-serif;
-      padding: 5px;
-      margin: 10px;
-      width: 30%;
-    }
-
-    .cupcake-box:nth-child(4) {
-      background-color: #CFF4B9;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border-radius: 20px;
-      font-size: 20px;
-      font-weight: bold;
-      font-family: 'Font Name', sans-serif;
-      padding: 5px;
-      margin: 10px;
-      width: 30%;
-    }
-
-    .cupcake-box:nth-child(5) {
-      background-color: #EE5555;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border-radius: 20px;
-      font-size: 20px;
-      font-weight: bold;
-      font-family: 'Font Name', sans-serif;
-      padding: 5px;
-      margin: 10px;
-      width: 30%;
-    }
-
-    .cupcake-box:nth-child(6) {
-      background-color: #FFCA7C;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border-radius: 20px;
-      font-size: 20px;
-      font-weight: bold;
-      font-family: 'Font Name', sans-serif;
-      padding: 5px;
-      margin: 10px;
-      width: 30%;
-    }
-
     
-
-    h5, h4, h3, h2, h1 {
-      font-size: 30px; /* Ubah ukuran teks sesuai dengan kebutuhan Anda */
-      padding: 2px;
-      background-color: #BC5151; /* Warna latar belakang untuk tulisan "Cupcake" pada box pertama */
-      border-radius: 20px;
-      color: #FFFFFF; /* Warna teks pada tulisan "Cupcake" pada box pertama */
-      display: flex;
-      width:250px;
-      justify-content: center;
+    .textUpdate{
+      font-size: 20px;
+      font-weight: bold;
+      font-family: 'Font Name', sans-serif;
     }
-
-  .nama {
-    display: flex;
-    justify-content: center;
-  }
-
-  .price {
-    display: flex;
-    justify-content: center;
-  }
-
-  .desc {
-    display: flex;
-    justify-content: center;
-  }
-
-  .stock {
-    display: flex;
-    justify-content: center;
-  }
-
-  .sweet {
-    display: flex;
-    justify-content: center;
-  }
+    
+ 
   </style>
 
 </head>
@@ -171,36 +90,42 @@
     <div class='welcome'>
       /ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗ SELAMAT DATANG DI CUPCAT-SHOP /ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗
     </div> 
-    
-<table>
-  <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th>Sweetness</th>
-      <th>Amount</th>
-  </tr>
-
-  {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-
-  {% for product in products %}
+  
+    <table>
       <tr>
-          <td>{{product.name}}</td>
-          <td>{{product.price}}</td>
-          <td>{{product.description}}</td>
-          <td>{{product.sweetness}}</td>
-          <td>{{product.amount}}</td>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Sweetness</th>
+          <th>Amount</th>
       </tr>
-  {% endfor %}
-</table>
 
-<br />
+      {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
 
-<a href="{% url 'main:create_product' %}">
-  <button>
-      Add New Product
-  </button>
-</a>
+      {% for product in products %}
+          <tr>
+              <td>{{product.name}}</td>
+              <td>{{product.price}}</td>
+              <td>{{product.description}}</td>
+              <td>{{product.sweetness}}</td>
+              <td>{{product.amount}}</td>
+          </tr>
+      {% endfor %}
+    </table>
+
+    <br />
+
+    <div class="buttondir">
+      <div class="textUpdate">
+        Update Products Here ^.^
+      </div>
+      <a href="{% url 'main:create_product' %}"> 
+        <button>
+            Add New Product
+        </button>
+      </a>
+    </div>
+    
   </div>
 </body>
 {% endblock content %}
