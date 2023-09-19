@@ -110,7 +110,19 @@ class ProductForm(ModelForm):
 
 ### Screenshot Postman
 ##### HTML
+![html](https://github.com/kayzaazr/cupcat-shop/assets/125040193/840b2ef6-0c8b-4b6b-b77c-09b0807ce83f)
 
+##### XML
+![xml](https://github.com/kayzaazr/cupcat-shop/assets/125040193/2db26d5a-d83b-4c7a-81dd-5f7a3949ecc1)
+
+##### JSON
+![json](https://github.com/kayzaazr/cupcat-shop/assets/125040193/992a499c-b36d-46a6-838b-f56147f31729)
+
+##### XML by ID
+![xml_by_id](https://github.com/kayzaazr/cupcat-shop/assets/125040193/c76f4c84-47df-42a1-b01d-b1f2948babd3)
+
+##### JSON by ID
+![json_by_id](https://github.com/kayzaazr/cupcat-shop/assets/125040193/9987d6cc-b8d7-4fd4-83d3-36fce99949d2)
 
 <details>
 <summary> Tugas 2 </summary>
