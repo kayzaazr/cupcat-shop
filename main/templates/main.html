@@ -80,6 +80,14 @@
       font-weight: bold;
       font-family: 'Font Name', sans-serif;
     }
+
+    .buttonSmall{
+      background-color:#E49C9C ;
+      width: 75px;
+      height: 25px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
     
  
   </style>
@@ -108,7 +116,20 @@
               <td>{{product.price}}</td>
               <td>{{product.description}}</td>
               <td>{{product.sweetness}}</td>
-              <td>{{product.amount}}</td>
+              <td>
+                {{product.amount}}
+                <a href="decrease-amount/{{product.id}}">
+                    <button class="buttonSmall" > reduce </button>
+                </a>
+                <a href="increase-amount/{{product.id}}">
+                    <button class="buttonSmall" > add </button>
+                </a>
+              </td>
+              <td>
+                <a href="delete-product/{{product.id}}">
+                    <button class="buttonSmall" > delete </button>
+                </a>
+              </td>
           </tr>
       {% endfor %}
     </table>
@@ -116,14 +137,20 @@
     <br />
 
     <div class="buttondir">
-      <div class="textUpdate">
-        Update Products Here ^.^
-      </div>
-      <a href="{% url 'main:create_product' %}"> 
-        <button>
-            Add New Product
-        </button>
-      </a>
+        <div class="textUpdate">
+            Update Products Here ^.^
+        </div>
+        <a href="{% url 'main:create_product' %}"> 
+            <button>
+                Add New Product
+            </button>
+        </a>
+        <h5>Sesi terakhir login: {{ last_login }}</h5>
+        <a href="{% url 'main:logout' %}">
+            <button>
+                Logout
+            </button>
+        </a>
     </div>
     
   </div>
