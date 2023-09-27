@@ -286,7 +286,7 @@ def logout_user(request):
 ```
 
 <details>
-<summary> ## TUGAS 3 </summary>
+<summary> Tugas 3 </summary>
 > Cupcat-shop merupakan toko kue jenis cupcake. Di dalam toko ini terdapat 5 informasi yang tersedia, yaitu name, price, description, sweetness, dan amount.
 
 ### Apa perbedaan antara form POST dan form GET dalam Django?
