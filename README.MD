@@ -411,6 +411,7 @@ class ProductForm(ModelForm):
 
 ##### JSON by ID
 ![json_by_id](https://github.com/kayzaazr/cupcat-shop/assets/125040193/9987d6cc-b8d7-4fd4-83d3-36fce99949d2)
+</details>
 
 <details>
 <summary> Tugas 2 </summary>
@@ -455,4 +456,5 @@ Virtual Environment digunakan untuk mengisolasi paket dan dependensi yang berbed
 3. MVVM (Model-View-ViewModel) adalah pola desain yang memiliki fokus pada ViewModel. ViewModel adalah komponen yang bertindak sebagai penghubung antara Model (data) dan View (tampilan) dalam pengembangan aplikasi berbasis antarmuka pengguna (UI). ViewModel bertanggung jawab untuk menyediakan data dan metode yang diperlukan oleh tampilan sehingga memungkinkan binding dua arah antara tampilan dan data.
 
 Perbedaan utama di antara ketiganya terletak pada cara penggunaannya dan rincian implementasi yang spesifik. Namun, inti tujuan dari ketiga pola desain ini adalah untuk mencapai pemisahan yang jelas antara tampilan dan data dalam pengembangan aplikasi. Hal ini dilakukan untuk meningkatkan pemahaman kode dan kemampuan perluasan (scalability). Dengan kata lain, meskipun metode dan konsepnya berbeda, tetapi akhirnya semua tiga pola ini bertujuan untuk mencapai struktur kode yang efektif, lebih terstruktur, dan mudah dikelola.
+
 </details>
