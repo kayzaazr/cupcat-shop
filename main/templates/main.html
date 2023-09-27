@@ -6,7 +6,7 @@
   <style>
     .container {
       background-color: white;
-      background: linear-gradient(to bottom, #EDEDFF, #FFAEAE);
+      background: linear-gradient(to bottom, #dfdfff, #FFAEAE);
       display: flex;
       flex-direction: column;
       padding:20px;
@@ -98,7 +98,9 @@
     <div class='welcome'>
       /ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗ SELAMAT DATANG DI CUPCAT-SHOP /ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗
     </div> 
+
     <p> Kamu memmiliki stock {{ products.count }} cupcake pada toko ini</p>
+    
     <table>
       <tr>
           <th>Name</th>
@@ -106,6 +108,7 @@
           <th>Description</th>
           <th>Sweetness</th>
           <th>Amount</th>
+          <th> </th>
       </tr>
 
       {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
