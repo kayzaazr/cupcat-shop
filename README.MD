@@ -2,11 +2,72 @@
 Link Deploying App : https://cupcat-shop.adaptable.app/
 > Cupcat-shop merupakan toko kue jenis cupcake. Di dalam toko ini terdapat 5 informasi yang tersedia, yaitu name, price, description, sweetness, dan amount.
 
-## TUGAS 4
+## TUGAS 5
+### Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya
+
+Element Selector penting pada kode pemrograman website menggunakan CSS karena memudahkan untuk mengambil suatu elemen yang ingin diberi style.
+Manfaat dari element selector:
+1. memudahkan memberi style ke dalam suatu 'container' berisi banyak elemen sekaligus.
+2. mengatur gaya default untuk elemen pada web.
+3. memberikan style khusus pada elemen tipe yang sama, misal <button>, <a>, <h1>, dll.
+
+###  Jelaskan HTML5 Tag yang kamu ketahui.
+1. <body> tag untuk mengspesifikasikan isi body dari elemen suatu website.
+2. <head> tag untuk mengspesifikasikan isi head/header suatu website.
+3. <div> tag untuk mengspesifikasikan section-section berisi beberapa elemen di suatu website.
+4. <h1> to <h6> tag untuk mengspesifikasikan header dengan ukuran yang berbeda-beda.
+5. <button> tag untuk membuat button yang dapat dipencet.
+
+###  Jelaskan perbedaan antara margin dan padding.
+Padding adalah jarak antara konten dalam elemen dengan batas atau tepi elemen tersebut.Padding mengatur seberapa jauh konten di dalam elemen dari tepi elemen tersebut. Sedangkan margin adalah jarak antara elemen dengan elemen-elemen di sekitarnya. Margin mengatur seberapa jauh lemen tersebut dari elemen-elemen lain di sekitarnya.
+
+### Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+Tailwind CSS: Menggunakan pendekatan utilitas dan membangun tampilan dengan menambahkan kelas-kelas CSS ke elemen HTML. Ini memberi fleksibilitas yang tinggi dalam menyesuaikan tampilan, tetapi memerlukan lebih banyak penulisan kode CSS kustom.
+Bootstrap: Menyediakan kumpulan komponen yang siap digunakan seperti tombol, kartu, dan jendela modal, dengan bootstrap dapat membangun tampilan dengan menggabungkan komponen-komponen ini. Bootstrap memungkinkan pengembangan yang lebih cepat karena tidak perlu menulis banyak kode CSS kustom.
+
+Bootstrap sebaiknya digunakan ketika kita tidak memerlukan tingkat kostumisasi yang lebih tinggi. Sedangkan Tailwind digunakan pada saat kita ingin membuat tampilan website dengan kustomisasi yang rinci.
+
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+1. Saya mengkkustomisasi website yang saya buat dengan menggunakan CSS.
+2. Setiap element pada main.html, saya pakai id selector dan element selector.
+3. Untuk membuat stylenya, saya beri tag <style> di halaman html saya
+```
+<style>
+.....
+</style>
+```
+4. Saya mengambil salah satu elemen yang dibungkus dengan selector berupa id bernama container
+```
+<div class='container'>
+    <header>
+      /ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗ SELAMAT DATANG DI CUPCAT-SHOP /ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗
+    </header> 
+    ....
+
+```
+5. id element tersebut saya berikan style di dalam tag <style> dengan beberapa aturan ukuran, panjang, warna, posisi, dll.
+```
+    .container {
+      background-color: white;
+      background: linear-gradient(to bottom, #dfdfff, #FFAEAE);
+      display: flex;
+      flex-direction: column;
+      padding:20px;
+      gap:50px;
+      align-items: center;
+      height: 800px;
+      margin: 0px;
+    }
+
+```
+6. Begitupun seterusnya kepada elemen-elemen tag yang lain.
+
+<details>
+<summary> ## TUGAS 4 </summary>
 
 ## Apa itu Django `UserCreationForm`, dan jelaskan apa kelebihan dan kekurangannya?
 
-`UserCreationForm` adalah salah satu form bawaan yang disediakan oleh Django untuk mengelola proses autentikasi dan otorisasi pengguna. Form ini digunakan untuk membuat formulir pendaftaran (sign-up) pengguna baru di aplikasi web.
+`UserCreationForm` adalah salah satu form bawaan yang disediakan oleh Django untuk mengelola proses autentikasi dan otorisasi pengguna. Form ini digunakan untuk membuat formulir pendaftaran (sign-up) pengguna baru di apalikasi web.
 
 ### Kelebihan
 - Mudah Digunakan
@@ -284,6 +345,7 @@ def logout_user(request):
 <h5>Sesi terakhir login: {{ last_login }}</h5>
 ...
 ```
+</details>
 
 <details>
 <summary> Tugas 3 </summary>
