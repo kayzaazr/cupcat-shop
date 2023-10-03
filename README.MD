@@ -9,14 +9,14 @@ Element Selector penting pada kode pemrograman website menggunakan CSS karena me
 Manfaat dari element selector:
 1. memudahkan memberi style ke dalam suatu 'container' berisi banyak elemen sekaligus.
 2. mengatur gaya default untuk elemen pada web.
-3. memberikan style khusus pada elemen tipe yang sama, misal <button>, <a>, <h1>, dll.
+3. memberikan style khusus pada elemen tipe yang sama, misal `<button>`, `<a>`, `<h1>`, dll.
 
 ###  Jelaskan HTML5 Tag yang kamu ketahui.
-1. <body> tag untuk mengspesifikasikan isi body dari elemen suatu website.
-2. <head> tag untuk mengspesifikasikan isi head/header suatu website.
-3. <div> tag untuk mengspesifikasikan section-section berisi beberapa elemen di suatu website.
-4. <h1> to <h6> tag untuk mengspesifikasikan header dengan ukuran yang berbeda-beda.
-5. <button> tag untuk membuat button yang dapat dipencet.
+1. `<body>` tag untuk mengspesifikasikan isi body dari elemen suatu website.
+2. `<head>` tag untuk mengspesifikasikan isi head/header suatu website.
+3. `<div>` tag untuk mengspesifikasikan section-section berisi beberapa elemen di suatu website.
+4. `<h1>` to `<h6>` tag untuk mengspesifikasikan header dengan ukuran yang berbeda-beda.
+5. `<button>` tag untuk membuat button yang dapat dipencet.
 
 ###  Jelaskan perbedaan antara margin dan padding.
 Padding adalah jarak antara konten dalam elemen dengan batas atau tepi elemen tersebut.Padding mengatur seberapa jauh konten di dalam elemen dari tepi elemen tersebut. Sedangkan margin adalah jarak antara elemen dengan elemen-elemen di sekitarnya. Margin mengatur seberapa jauh lemen tersebut dari elemen-elemen lain di sekitarnya.
