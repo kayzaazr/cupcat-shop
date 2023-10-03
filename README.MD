@@ -46,6 +46,7 @@ Bootstrap sebaiknya digunakan ketika kita tidak memerlukan tingkat kostumisasi y
 
 ```
 5. id element tersebut saya berikan style di dalam tag <style> dengan beberapa aturan ukuran, panjang, warna, posisi, dll.
+
 ```
     .container {
       background-color: white;
@@ -63,7 +64,7 @@ Bootstrap sebaiknya digunakan ketika kita tidak memerlukan tingkat kostumisasi y
 6. Begitupun seterusnya kepada elemen-elemen tag yang lain.
 
 <details>
-<summary> ## TUGAS 4 </summary>
+<summary> Tugas 4 </summary>
 
 ## Apa itu Django `UserCreationForm`, dan jelaskan apa kelebihan dan kekurangannya?
 
