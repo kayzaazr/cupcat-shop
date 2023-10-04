@@ -4,32 +4,41 @@
 <head>
   <title>Welcome to Cupcat-Shop</title>
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+  }
     .container {
-      background-color: white;
+      position:relative;
+      background-color:white;
       background: linear-gradient(to bottom, #dfdfff, #FFAEAE);
       display: flex;
       flex-direction: column;
-      padding:20px;
+      padding-top: 64px;
       gap:50px;
       align-items: center;
-      width: 1480px;
-      height: 770px;
+      width: 100%;
+      height: 800px;
+      margin: 0px;
     }
-    .welcome{
+
+    header{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: pink;
+      padding: 10px 0;
+      text-align: center;
+      z-index: 1000; /* Untuk mengatur tingkat kedalaman elemen */
       background-color: #FFC0C0;
       font-size: 25px;
       font-weight: bold;
       font-family: 'Font Name', sans-serif;
-      padding: 5px;
       display: flex;
       justify-content:center;
-      width: 800px;
-      border-radius: 20px;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-
     }
-
-    
     
     th, td {
         border: 1px solid #ddd;
@@ -56,24 +65,24 @@
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
 
-    button{
-      background-color:#E49C9C ;
-      width: 200px;
-      height: 100px;
-      border-radius: 10px;
-      cursor: pointer;
-    }
+  .buttonLogin{
+    background-color:#E49C9C ;
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
 
-    button:hover{
-      background-color: #BC5151;
-    }
+  .buttonLogin:hover{
+    background-color: #BC5151;
+  }
 
-    .buttondir{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
+  .buttonLogindir{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
     
     .textUpdate{
       font-size: 20px;
@@ -89,17 +98,16 @@
       cursor: pointer;
     }
     
- 
   </style>
 
 </head>
 <body>
   <div class='container'>
-    <div class='welcome'>
-      /ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗ SELAMAT DATANG DI CUPCAT-SHOP /ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗
-    </div> 
+    <header>
 
-    <p> Kamu memmiliki stock {{ products.count }} cupcake pada toko ini</p>
+    </header> 
+
+    <p> Kamu memiliki stock {{ products.count }} cupcake pada toko ini</p>
     
     <table>
       <tr>
@@ -144,13 +152,13 @@
             Update Products Here ^.^
         </div>
         <a href="{% url 'main:create_product' %}"> 
-            <button>
+            <button class="buttonLogin">
                 Add New Product
             </button>
         </a>
         <h5>Sesi terakhir login: {{ last_login }}</h5>
         <a href="{% url 'main:logout' %}">
-            <button>
+            <button class="buttonLogin">
                 Logout
             </button>
         </a>
