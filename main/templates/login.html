@@ -12,7 +12,7 @@
             background: linear-gradient(90deg, #FFF 0.19%, #FEF 93.27%);
             display: flex;
             flex-direction: column;
-            padding-top: 64px;
+            padding-top: 80px;
             gap:50px;
             align-items: center;
             width: 100%;
@@ -39,24 +39,44 @@
             cursor: pointer;
         }
 
+        .buttonRegister {
+            display: inline-block;
+            height:20px;
+            width:90px;
+            padding: 10px 10px; 
+            background-color: #E49C9C; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-weight: bold; 
+            cursor: pointer;
+        }
+        
+        .buttonRegister:hover {
+            background-color: #BC5151; 
+        }
+
         .navbar{
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 60px;
-
             padding: 10px 0;
-            text-align: center;
-            z-index: 1000; /* Untuk mengatur tingkat kedalaman elemen */
+            gap:1100px;
+            z-index: 1000; 
             background-color: #FFC0C0;
             font-size: 10px;
             font-weight: bold;
             font-family: 'Font Name', sans-serif;
             display: flex;
-            justify-content:center;
+            flex-direction: row;
+            
             background: radial-gradient(155.28% 155.28% at 50% -55.28%, #FFC1C1 0%, #FFF3E9 96.88%);
             box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.50);
+            
           }
 
           table{
@@ -65,17 +85,22 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
           }
 
-          .buttonRegister{
-            
+          .logo{
+            justify-content: left;
+            left:0;
+            margin-right: 10px;
+
           }
 
+          
         
         
     </style>
 </head>
 <div class = "container">
     <div class="navbar">
-        <a class = "buttonRegister" href="{% url 'main:register' %}">Register Now</a> 
+        <img src="https://raw.githubusercontent.com/kayzaazr/cupcat-shop/main/gambar-website/logo%20cupcat.svg" class="logo"> 
+        <a class = "buttonRegister" href="{% url 'main:register' %}"> Register Now</a> 
     </div>
     <div class="isi">
         <form method="POST" action="">
