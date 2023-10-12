@@ -1,175 +1,207 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<head>
-  <title>Welcome to Cupcat-Shop</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-  }
-    .container {
-      position:relative;
-      background-color:white;
-      background: linear-gradient(to bottom, #dfdfff, #FFAEAE);
-      display: flex;
-      flex-direction: column;
-      padding-top: 64px;
-      gap:50px;
-      align-items: center;
-      width: 100%;
-      height: 800px;
-      margin: 0px;
-    }
-
-    header{
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: pink;
-      padding: 10px 0;
-      text-align: center;
-      z-index: 1000; /* Untuk mengatur tingkat kedalaman elemen */
-      background-color: #FFC0C0;
-      font-size: 25px;
-      font-weight: bold;
-      font-family: 'Font Name', sans-serif;
-      display: flex;
-      justify-content:center;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    th, td {
+  <head>
+    <title>Welcome to Cupcat-Shop</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .main-container {
+        position: relative;
+        background-color: white;
+        background: linear-gradient(to bottom, #dfdfff, #FFAEAE);
+        display: flex;
+        flex-direction: column;
+        padding-top: 64px;
+        gap: 50px;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+      }
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: pink;
+        padding: 10px 0;
+        text-align: center;
+        z-index: 1000;
+        background-color: #FFC0C0;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: 'Font Name', sans-serif;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      th, td {
         border: 1px solid #ddd;
+
         padding: 20px;
         text-align: left;
-    }
-    
-    tr:nth-child(odd) {
-      background-color: white;
-  }
-    th {
+      }
+      tr:nth-child(odd) {
+        background-color: white;
+      }
+      th {
         padding: 8px;
         background-color: #FFC0C0;
         font-weight: bold;
-    }
-    
-    tr:nth-child(even) {
+      }
+      tr:nth-child(even) {
         background-color: #f2f2f2;
-    }
+      }
+      table {
+        width: 80%;
+        border-collapse: collapse;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      .buttonLogin {
+        background-color: #E49C9C;
+        width: 200px;
+        height: 100px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .buttonLogin:hover {
+        background-color: #BC5151;
+      }
+      .buttonLogindir {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      .textUpdate {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Font Name', sans-serif;
+      }
+      .buttonSmall {
+        background-color: #E49C9C;
+        width: 75px;
+        height: 25px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .custom-row.last-row td {
+        background-color: #ff9999;
+      }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
+      .btnajax {
+        background-color: #E49C9C;
+        width: 200px;
+        height: 100px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
 
-  .buttonLogin{
-    background-color:#E49C9C ;
-    width: 200px;
-    height: 100px;
-    border-radius: 10px;
-    cursor: pointer;
-  }
+    <div class='main-container'>
+      <header>
+        /ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗ SELAMAT DATANG {{ name }} DI CUPCAT-SHOP /ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗
+      </header>
+      <p> Kamu memiliki stock {{ products.count }} cupcake pada toko ini</p>
 
-  .buttonLogin:hover{
-    background-color: #BC5151;
-  }
-
-  .buttonLogindir{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-    
-    .textUpdate{
-      font-size: 20px;
-      font-weight: bold;
-      font-family: 'Font Name', sans-serif;
-    }
-
-    .buttonSmall{
-      background-color:#E49C9C ;
-      width: 75px;
-      height: 25px;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    .custom-row.last-row td {
-      background-color: #ff9999;
-  }
-    
-  </style>
-
-</head>
-<body>
-  <div class='container'>
-    <header>
-      /ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗ SELAMAT DATANG DI CUPCAT-SHOP /ᐠ. ｡.ᐟ\ᵐᵉᵒʷˎˊ˗
-    </header> 
-
-    <p> Kamu memiliki stock {{ products.count }} cupcake pada toko ini</p>
-    
-    <table>
-      <tr>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Description</th>
-          <th>Sweetness</th>
-          <th>Amount</th>
-          <th> </th>
-      </tr>
-
-      {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-
-      {% for product in products %}
-        <tr class="custom-row{% if forloop.last %} last-row{% endif %}">
-              <td>{{product.name}}</td>
-              <td>{{product.price}}</td>
-              <td>{{product.description}}</td>
-              <td>{{product.sweetness}}</td>
-              <td>
-                {{product.amount}}
-                <a href="decrease-amount/{{product.id}}">
-                    <button class="buttonSmall" > reduce </button>
-                </a>
-                <a href="increase-amount/{{product.id}}">
-                    <button class="buttonSmall" > add </button>
-                </a>
-              </td>
-              <td>
-                <a href="delete-product/{{product.id}}">
-                    <button class="buttonSmall" > delete </button>
-                </a>
-              </td>
-              
-          </tr>
-          
-      {% endfor %}
-    </table>
-
-    <br />
-
-    <div class="buttondir">
-        <div class="textUpdate">
-            Update Products Here ^.^
-        </div>
-        <a href="{% url 'main:create_product' %}"> 
-            <button class="buttonLogin">
-                Add New Product
-            </button>
-        </a>
+      <table id="product_table"></table>
+      <div class="buttondir">
         <h5>Sesi terakhir login: {{ last_login }}</h5>
         <a href="{% url 'main:logout' %}">
-            <button class="buttonLogin">
-                Logout
-            </button>
+          <button class="buttonLogin">
+            Logout
+          </button>
         </a>
+        <button type="button" class="btnajax" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
+      </div>
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="form" onsubmit="return false;">
+              {% csrf_token %}
+              <div class="mb-3">
+                <label for="name" class="col-form-label">Name:</label>
+                <input type="text" class="form-control" id="name" name="name">
+              </div>
+              <div class="mb-3">
+                <label for="price" class="col-form-label">Price:</label>
+                <input type="number" class="form-control" id="price" name="price">
+              </div>
+              <div class="mb-3">
+                <label for="description" class="col-form-label">Description:</label>
+                <textarea class="form-control" id="description" name="description"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="sweetness" class="col-form-label">Sweetness:</label>
+                <input type="number" class="form-control" id="sweetness" name="sweetness">
+              </div>
+              <div class="mb-3">
+                <label for="amount" class="col-form-label">Amount:</label>
+                <input type="number" class="form-control" id="amount" name="amount">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+          </div>
+        </div>
+      </div>
     </div>
     
   </div>
-</body>
+
+  
+  <script>
+   async function getProducts() {
+    return fetch("{% url 'main:get_product_json' %}").then((res) => res.json());
+  }
+
+  async function refreshProducts() {
+    document.getElementById("product_table").innerHTML = "";
+    const products = await getProducts();
+    let htmlString = `<tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Sweetness</th>
+        <th>Amount</th>
+    </tr>`;
+    products.forEach((item) => {
+      htmlString += `\n<tr>
+        <td>${item.fields.name}</td>
+        <td>${item.fields.price}</td>
+        <td>${item.fields.description}</td>
+        <td>${item.fields.sweetness}</td>
+        <td>${item.fields.amount}</td>
+      </tr>`;
+    });
+    
+    document.getElementById("product_table").innerHTML = htmlString;
+  }
+
+  refreshProducts();
+
+  function addProduct() {
+    fetch("{% url 'main:add_product_ajax' %}", {
+        method: "POST",
+        body: new FormData(document.querySelector('#form'))
+    }).then(refreshProducts);
+
+    document.getElementById("form").reset();
+    return false;
+  }
+
+  document.getElementById("button_add").onclick = addProduct;
+</script>
 {% endblock content %}
