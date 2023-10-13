@@ -2,7 +2,68 @@
 Link Deploying App : https://cupcat-shop.adaptable.app/
 > Cupcat-shop merupakan toko kue jenis cupcake. Di dalam toko ini terdapat 5 informasi yang tersedia, yaitu name, price, description, sweetness, dan amount.
 
-## TUGAS 5
+## TUGAS 6
+### Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.\
+Async adalah teknik pemrograman di mana operasi atau program dapat berjalan secara bersamaan atau sekaligus. Ini berarti beberapa tugas dapat dikerjakan secara paralel atau dalam beberapa thread yang berbeda. Sedangkan Sync adalah teknik pemrograman di mana hanya satu operasi atau program akan berjalan pada satu waktu. Ini berarti tugas-tugas dieksekusi satu per satu dalam satu thread tunggal.
+
+Async adalah non-blocking, yang berarti ketika ada operasi yang memerlukan waktu seperti permintaan ke server, program tidak akan berhenti dan menunggu operasi tersebut selesai. Sebaliknya, ia akan melanjutkan menjalankan tugas-tugas lain. Sedangkan, Sync adalah blocking, yang berarti ketika ada operasi yang memerlukan waktu, program akan berhenti dan menunggu operasi tersebut selesai sebelum melanjutkan ke tugas berikutnya.
+
+### Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+Paradigma event-driven programming adalah pendekatan pemrograman di mana eksekusi program terutama dikendalikan oleh kejadian (event) yang terjadi, bukan urutan yang ditentukan secara linear. Dalam konteks JavaScript dan AJAX, ini berarti program atau skrip JavaScript akan merespons terhadap kejadian-kejadian tertentu, seperti tindakan pengguna (misalnya, klik tombol), respon dari server, atau kejadian lainnya yang terjadi di dalam aplikasi web.
+
+Contoh penerapannya pada tugas ini adalah ketika menggunakan AJAX untuk memuat data dinamis dari server tanpa perlu me-refresh seluruh halaman.
+
+### Jelaskan penerapan asynchronous programming pada AJAX.
+Asynchronous programming pada AJAX (Asynchronous JavaScript and XML) adalah pendekatan pemrograman di mana operasi-perasi yang melibatkan permintaan dan pengambilan data dari server dilakukan secara asinkron. Ini berarti bahwa operasi-operasi tersebut tidak akan menghalangi eksekusi program utama, dan program dapat melanjutkan menjalankan tugas-tugas lainnya tanpa harus menunggu operasi tersebut selesai.
+
+### Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+Fetch API adalah API standar yang lebih modern dan merupakan bagian dari JavaScript itu sendiri. Ini mendukung promise, yang memungkinkan penggunaan yang lebih baik dalam pemrograman asinkron. Sedangkan jQuery diketahui memiliki API yang mudah digunakan, terutama bagi mereka yang baru mengenal AJAX. Ini memungkinkan pengembang untuk menulis kode yang lebih singkat.
+
+Fetch API digunakan jika ingin fokus pada pengembangan modern dan ringan. Namun, jika ingin sesuatu yang lebih cepat dan mudah digunakan, jQuery merupakan pilihan yang tepat.
+
+### Step
+1. Pertama, saya menambahkan fungsi baru pada views.py, yaitu `get_product_json` untuk mengembalikan data produk pada HTML dengan menggunakan `fetch`
+2. Membuat fungsi `add_product_ajax' pada views.py, setelah itu fungsi yang dibuat tadi saya routing pada berkas urls.py.
+3. Struktur table yang saya buat sebelumnya, saya ganti jadi 
+```
+<table id="product_table"></table>
+```
+4. Lalu, saya membuat block `<Script>` dan menambahkan async function untuk getProducts dan refreshProducts.
+5. Di sebelum block `<Script>` saya menambahkan modal sebagai form untuk menambahkan produk.
+```
+...
+<div class="modal-body">
+            <form id="form" onsubmit="return false;">
+              {% csrf_token %}
+              <div class="mb-3">
+                <label for="name" class="col-form-label">Name:</label>
+                <input type="text" class="form-control" id="name" name="name">
+              </div>
+              <div class="mb-3">
+                <label for="price" class="col-form-label">Price:</label>
+                <input type="number" class="form-control" id="price" name="price">
+              </div>
+              <div class="mb-3">
+                <label for="description" class="col-form-label">Description:</label>
+                <textarea class="form-control" id="description" name="description"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="sweetness" class="col-form-label">Sweetness:</label>
+                <input type="number" class="form-control" id="sweetness" name="sweetness">
+              </div>
+              <div class="mb-3">
+                <label for="amount" class="col-form-label">Amount:</label>
+                <input type="number" class="form-control" id="amount" name="amount">
+              </div>
+            </form>
+          </div>
+...
+```
+6. Setelah itu saya menambahkan button `add Product by AJAX`.
+7. Pada block `<Script>` saya menambahkan fungsi addProduct dan button untuk add productnya.
+
+<details>
+<summary> Tugas 5 </summary>
 ### Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya
 
 Element Selector penting pada kode pemrograman website menggunakan CSS karena memudahkan untuk mengambil suatu elemen yang ingin diberi style.
@@ -62,6 +123,7 @@ Bootstrap sebaiknya digunakan ketika kita tidak memerlukan tingkat kostumisasi y
 
 ```
 6. Begitupun seterusnya kepada elemen-elemen tag yang lain.
+</details>
 
 <details>
 <summary> Tugas 4 </summary>
